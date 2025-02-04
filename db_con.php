@@ -3,6 +3,6 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbName = "amazoone";
+$dbName = "todo";
 
 $conn = new PDO("mysql:host=$host;dbname=$dbName", $user, $password);
