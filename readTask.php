@@ -24,12 +24,12 @@ include_once("./db_con.php");
 
         <div class="btn-group">
             <form class="delete" action="./delete.php" method="POST">
-                <input type="hidden" name="email" value="<?php echo $tasks["id"] ?>">
+                <input type="hidden" name="id" value="<?php echo $tasks["id"] ?>">
                 <input type="submit" value="Delete your profile">
             </form>
 
             <form class="change" action="./mod-page.php" method="POST">
-                <input type="hidden" name="email" value="<?php echo $tasks["id"] ?>">
+                <input type="hidden" name="id" value="<?php echo $tasks["id"] ?>">
                 <input type="submit" value="Change your details">
             </form>
         </div>
