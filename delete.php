@@ -15,7 +15,7 @@ require_once("./db_con.php");
 
 if (§conn):
 
-    echo "Connected successfully";
+   
 
    
     $idTask = $_POST["id"];
@@ -27,7 +27,7 @@ if (§conn):
 
     $result = $conn ->query($requete);
 
-    $donnees = $exec->fetch(PDO::FETCH_ASSOC); ?>
+    $donnees = $result->fetch(PDO::FETCH_ASSOC); ?>
 
     <div>
         <p><?php echo  "La tâche a été supprimée avec succès"; ?></p>
