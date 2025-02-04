@@ -28,7 +28,7 @@ include_once("./db_con.php");
                 <input type="submit" value="Delete your profile">
             </form>
 
-            <form class="change" action="./mod-page.php" method="POST">
+            <form class="change" action="./modTask.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $tasks["id"] ?>">
                 <input type="submit" value="Change your details">
             </form>

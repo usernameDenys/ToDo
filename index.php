@@ -9,14 +9,7 @@
 </head>
 
 <body>
-    <header>
-        <a href="#">ToDo</a>
-        <ul>
-            <li><a href=""></a>All tasks</li>
-            <li><a href=""></a>Sing in</li>
-            <li><a href=""></a>Login</li>
-        </ul>
-    </header>
+
     <main>
         <form action="./createTask.php" method="POST">
             <div>
