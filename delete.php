@@ -17,16 +17,20 @@ if (§conn):
 
     echo "Connected successfully";
 
-    $idTask = $_POST["task"];
+   
+    $idTask = $_POST["id"];
 
-    $requete = "DELETE FROM tasks WHERE idTask = '$idTask'";
+    
+
+
+    $requete = "DELETE FROM tasks WHERE id = '$idTask'";
 
     $result = $conn ->query($requete);
 
     $donnees = $exec->fetch(PDO::FETCH_ASSOC); ?>
 
     <div>
-        <p><?php echo "La tâche a été supprimée avec succès"; ?></p>
+        <p><?php echo  "La tâche a été supprimée avec succès"; ?></p>
         <p><?php echo "Cette tâche est prévue </p>
 
 
