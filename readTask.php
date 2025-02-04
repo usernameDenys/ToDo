@@ -17,10 +17,10 @@ include_once("./db_con.php");
 
 
 
-        <div class="info-group">
-            <p class="name"><?php echo $tasks['taskName']; ?></p>
-            <p class="lastname"><?php echo $tasks['taskDesc']; ?></p>
-        </div>
+
+        <p class="name"><?php echo $tasks['name']; ?></p>
+        <p class="lastname"><?php echo $tasks['description']; ?></p>
+
 
         <div class="btn-group">
             <form class="delete" action="./delete.php" method="POST">
