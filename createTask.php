@@ -4,6 +4,9 @@ include_once("./db_con.php");
 $nameTask = htmlspecialchars($_POST["taskName"]);
 $descTack = htmlspecialchars($_POST["taskDesc"]);
 
+$hashName = password_hash($nameTask, PASSWORD_ARGON2ID);
+
+
 $pattern = "/^[A-Z]{1}[a-z]*$/";
 
 $nameValide = false;
@@ -13,6 +16,7 @@ if ($conn):
 
     if (isset($nameTask) && !empty(trim($nameTask)) && preg_match($pattern, $nameTask) && strlen($nameTask) > 2 && strlen($nameTask) <= 255):
         $nameValide = true;
+
     else:
         echo "<p>Vérifiez le format du texte.</p>";
     endif;
@@ -20,7 +24,7 @@ if ($conn):
     if (isset($descTack) && !empty(trim($descTack))):
         $descValide = true;
     else:
-        echo "<p>Vérifiez le format du texte.</p>";
+        echo "<p>test.</p>";
     endif;
 
     if ($nameValide === true && $descValide === true):
@@ -30,7 +34,7 @@ if ($conn):
 
         $etat = $conn->prepare($requete);
 
-        $etat->bindParam(':taskName', $nameTask, PDO::PARAM_STR);
+        $etat->bindParam(':taskName', $hashName , PDO::PARAM_STR);
         $etat->bindParam(':desc', $descTack, PDO::PARAM_STR);
 
         if ($etat->execute()):
@@ -40,9 +44,9 @@ if ($conn):
             echo "<p>Erreur lors de l'insertion.</p>";
         endif;
 
-    endif; // Fin du test des valeurs
+    endif;
 
 else:
     echo "<p>Erreur de connexion.</p>";
-endif; 
+endif;
 ?>
